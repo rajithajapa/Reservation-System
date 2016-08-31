@@ -1,0 +1,56 @@
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js JSON Fetching Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+   <style>
+      table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+   </style>
+  </head>
+  <body ng-controller="searchCtrl">
+   <h1> Flight Search </h1>
+    <table align="center">
+      <tr>
+        <th>From :</th> 
+		<th>To</th>
+        <th>Flightname</th>
+		<th>Noofstops</th>
+		<th>Price</th>
+		<th>Timings</th>
+      </tr>
+      <tr ng-repeat="flight in flights">
+        <td>{{flight.from}}</td> 
+		<td>{{flight.to}}</td>
+        <td>{{flight.flightname}}</td>		
+        <td>{{flight.noofstops}}</td> 
+		<td>{{flight.price}}</td>
+		<td>{{flight.timings}}</td>
+      </tr>
+    </table>
+	  <script>
+      var myApp = angular.module('myApp', []);
+     myApp.controller('searchCtrl', function ($scope, $http){
+        $http.get('data.json').success(function(data) {
+          $scope.flights = data;
+        });
+      });
+    </script>
+  </body>
+</html>

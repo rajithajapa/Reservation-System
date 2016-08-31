@@ -1,0 +1,43 @@
+[
+	{
+	  "from": "OrlandoInternationalAirport-FL",
+		"to": "Colorado Springs Airport-CO",
+	  "flightname": "JET Airways",
+	   "noofstops":3,
+	  "price":280,
+	  "timings":"10 AM"
+   },
+   {
+	  "from": "Florida Intl Airport",
+		"to": "Colorado Springs Airport-CO",
+	  "flightname": "American Airways",
+	   "noofstops":4,
+	  "price":680,
+	  "timings":"5 AM"
+   },
+    {
+	  "from": "Sanjose Intl Airport",
+		"to": "LAX Airport-LA",
+	  "flightname": "JET Airways",
+	   "noofstops":2,
+	  "price":1080,
+	  "timings":"4 AM"
+   },
+    {
+	  "from": "LAX Airport LA",
+		"to": "COlumbia",
+	  "flightname": "American Airways",
+	   "noofstops":4,
+	  "price":100,
+	  "timings":"9 PM"
+   },
+    {
+	  "from": "Florida Intl Airport",
+		"to": "Sanjose Intl Airport",
+	  "flightname": "American Airways",
+	   "noofstops":2,
+	  "price":980,
+	  "timings":"10 AM"
+   }
+   
+]
