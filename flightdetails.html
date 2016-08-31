@@ -26,6 +26,7 @@ th {
   </head>
   <body ng-controller="searchCtrl">
    <h1> Flight Search </h1>
+   <label>Search: <input ng-model="searchText"></label>
     <table align="center">
       <tr>
         <th>From :</th> 
@@ -35,7 +36,13 @@ th {
 		<th>Price</th>
 		<th>Timings</th>
       </tr>
-      <tr ng-repeat="flight in flights">
+      <tr ng-repeat="flight in flights| filter:searchText">
+	  
+	<label>No of Stops: <input ng-model="searchText.noofstops"></label> &nbsp
+    <label>Source:<input ng-model="searchText.from"></label> &nbsp
+     <label>Destination:<input ng-model="searchText.to"></label> <br>
+     <label>FlightName: <input ng-model="searchText.flightname"></label> &nbsp
+	 <label>Price: <input ng-model="searchText.price"></label>
         <td>{{flight.from}}</td> 
 		<td>{{flight.to}}</td>
         <td>{{flight.flightname}}</td>		
@@ -44,6 +51,9 @@ th {
 		<td>{{flight.timings}}</td>
       </tr>
     </table>
+	
+	
+	 
 	  <script>
       var myApp = angular.module('myApp', []);
      myApp.controller('searchCtrl', function ($scope, $http){
